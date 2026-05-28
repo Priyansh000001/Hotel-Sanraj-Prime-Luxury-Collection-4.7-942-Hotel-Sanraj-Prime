@@ -4,7 +4,6 @@ import {
   Star,
   MapPin,
   Phone,
-  MessageCircle,
   ArrowUpRight,
   Wifi,
   Snowflake,
@@ -49,7 +48,9 @@ export const Route = createFileRoute("/hotels/$slug")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.hotel.name} | ${loaderData.hotel.location} | Luxury Hotel in Jaipur` },
+          {
+            title: `${loaderData.hotel.name} | ${loaderData.hotel.location} | Luxury Hotel in Jaipur`,
+          },
           {
             name: "description",
             content: `${loaderData.hotel.tagline}. Book comfortable premium rooms in Jaipur at ${loaderData.hotel.name}, ${loaderData.hotel.location} with direct call, map, and booking links.`,
@@ -64,7 +65,10 @@ export const Route = createFileRoute("/hotels/$slug")({
             ]),
           },
           { name: "robots", content: "index, follow, max-image-preview:large" },
-          { property: "og:title", content: `${loaderData.hotel.name} | ${loaderData.hotel.location}` },
+          {
+            property: "og:title",
+            content: `${loaderData.hotel.name} | ${loaderData.hotel.location}`,
+          },
           { property: "og:description", content: loaderData.hotel.tagline },
           { property: "og:url", content: `${SITE_URL}/hotels/${loaderData.hotel.slug}` },
           { property: "og:type", content: "website" },
@@ -74,7 +78,10 @@ export const Route = createFileRoute("/hotels/$slug")({
             content: `${loaderData.hotel.name} ${loaderData.hotel.location} hotel preview`,
           },
           { name: "twitter:card", content: "summary_large_image" },
-          { name: "twitter:title", content: `${loaderData.hotel.name} | ${loaderData.hotel.location}` },
+          {
+            name: "twitter:title",
+            content: `${loaderData.hotel.name} | ${loaderData.hotel.location}`,
+          },
           { name: "twitter:description", content: loaderData.hotel.tagline },
           { name: "twitter:image", content: absoluteUrl(loaderData.hotel.cover) },
         ]
@@ -178,7 +185,7 @@ function HotelPage() {
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
-        <div className="relative z-10 mx-auto flex min-h-[90svh] max-w-7xl flex-col justify-end px-6 pb-20 pt-40">
+        <div className="relative z-10 mx-auto flex min-h-[90svh] max-w-7xl flex-col justify-end px-4 pb-24 pt-32 sm:px-6 sm:pb-20 sm:pt-40">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -190,7 +197,7 @@ function HotelPage() {
                 reviews
               </span>
             </div>
-            <h1 className="font-display text-5xl leading-[1.05] text-foreground md:text-7xl lg:text-[80px] max-w-4xl">
+            <h1 className="max-w-4xl font-display text-4xl leading-[1.05] text-foreground sm:text-5xl md:text-7xl lg:text-[80px]">
               {hotel.name}
             </h1>
             <p className="mt-2 flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-gold">
@@ -199,34 +206,32 @@ function HotelPage() {
             <p className="mt-5 max-w-2xl text-base text-foreground/80 md:text-lg">
               {hotel.tagline}
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-2.5 sm:gap-3">
               <a
                 href="#rooms"
-                className="rounded-full bg-gradient-gold px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.25em] text-ink shadow-gold-glow hover:scale-105 transition"
+                className="rounded-full bg-gradient-gold px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-ink shadow-gold-glow transition hover:scale-105 active:scale-95 sm:px-7 sm:py-3.5 sm:text-xs sm:tracking-[0.25em]"
               >
                 View Rooms
               </a>
               <a
                 href={`tel:${hotel.phone}`}
-                className="rounded-full border border-gold/40 px-6 py-3.5 text-xs uppercase tracking-[0.25em] text-foreground backdrop-blur-md hover:text-gold transition"
+                className="rounded-full border border-gold/40 px-4 py-3 text-[11px] uppercase tracking-[0.2em] text-foreground backdrop-blur-md transition hover:text-gold active:scale-95 sm:px-6 sm:py-3.5 sm:text-xs sm:tracking-[0.25em]"
               >
                 Call Now
-              </a>
-              <a
-                href={`https://wa.me/${hotel.whatsapp}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border hairline px-6 py-3.5 text-xs uppercase tracking-[0.25em] text-foreground/80 backdrop-blur-md hover:text-gold transition"
-              >
-                WhatsApp
               </a>
               <a
                 href={hotel.mapsDirections}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border hairline px-6 py-3.5 text-xs uppercase tracking-[0.25em] text-foreground/80 backdrop-blur-md hover:text-gold transition"
+                className="rounded-full border hairline px-4 py-3 text-[11px] uppercase tracking-[0.2em] text-foreground/80 backdrop-blur-md transition hover:text-gold active:scale-95 sm:px-6 sm:py-3.5 sm:text-xs sm:tracking-[0.25em]"
               >
                 Directions
+              </a>
+              <a
+                href="#book"
+                className="rounded-full border hairline px-4 py-3 text-[11px] uppercase tracking-[0.2em] text-foreground/80 backdrop-blur-md transition hover:text-gold active:scale-95 sm:px-6 sm:py-3.5 sm:text-xs sm:tracking-[0.25em]"
+              >
+                Book Stay
               </a>
             </div>
           </motion.div>
@@ -342,9 +347,9 @@ function HotelPage() {
       </section>
 
       {/* GALLERY */}
-      <section className="mx-auto max-w-7xl px-6 py-24">
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
         <SectionHeading eyebrow="Spaces" title="Inside the property" center />
-        <div className="mt-12 grid auto-rows-[200px] grid-cols-2 gap-3 md:grid-cols-4">
+        <div className="mt-12 grid auto-rows-[160px] grid-cols-2 gap-3 sm:auto-rows-[200px] md:grid-cols-4">
           {hotel.gallery.map((image, i) => (
             <motion.div
               key={i}
@@ -422,7 +427,13 @@ function HotelPage() {
       {/* BOOK */}
       <section id="book" className="mx-auto max-w-7xl px-6 py-24">
         <SectionHeading eyebrow="Reserve" title="Book through our partners" center />
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div
+          className={`mt-12 grid gap-4 ${
+            hotel.booking.length === 1
+              ? "mx-auto max-w-xl grid-cols-1"
+              : "sm:grid-cols-2 lg:grid-cols-4"
+          }`}
+        >
           {hotel.booking.map((p, i) => (
             <motion.a
               key={p.name}
@@ -433,7 +444,7 @@ function HotelPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="group relative flex items-center justify-between overflow-hidden rounded-2xl border hairline bg-card p-6 transition hover:border-gold hover:shadow-gold-glow"
+              className="group relative flex items-center justify-between overflow-hidden rounded-2xl border hairline bg-card p-6 transition duration-300 hover:-translate-y-1 hover:border-gold hover:shadow-gold-glow"
             >
               <div>
                 <div className="text-[10px] uppercase tracking-[0.3em] text-gold">Book on</div>
@@ -481,20 +492,12 @@ function HotelPage() {
       )}
 
       {/* STICKY MOBILE BOTTOM BAR */}
-      <div className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-4 gap-1 border-t hairline bg-ink/90 p-2 backdrop-blur-lg lg:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-3 gap-1 border-t hairline bg-ink/90 p-2 pb-[calc(env(safe-area-inset-bottom)+0.5rem)] backdrop-blur-lg lg:hidden">
         <a
           href={`tel:${hotel.phone}`}
           className="flex flex-col items-center justify-center gap-0.5 rounded-lg py-2 text-[10px] text-foreground/80"
         >
           <Phone size={16} className="text-gold" /> Call
-        </a>
-        <a
-          href={`https://wa.me/${hotel.whatsapp}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex flex-col items-center justify-center gap-0.5 rounded-lg py-2 text-[10px] text-foreground/80"
-        >
-          <MessageCircle size={16} className="text-gold" /> WhatsApp
         </a>
         <a
           href={hotel.mapsDirections}
@@ -508,7 +511,7 @@ function HotelPage() {
           href="#book"
           className="flex flex-col items-center justify-center gap-0.5 rounded-lg bg-gradient-gold py-2 text-[10px] font-semibold text-ink"
         >
-          <Sparkles size={16} /> Book
+          <Sparkles size={16} /> Book Stay
         </a>
       </div>
     </>

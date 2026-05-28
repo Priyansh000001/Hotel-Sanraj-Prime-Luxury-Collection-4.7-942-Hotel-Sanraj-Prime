@@ -90,6 +90,7 @@
   }
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   body {
     background-color: var(--color-background);
@@ -100,10 +101,19 @@
     background-image:
       radial-gradient(1200px 600px at 80% -10%, oklch(0.82 0.14 85 / 0.08), transparent 60%),
       radial-gradient(900px 500px at -10% 30%, oklch(0.62 0.13 75 / 0.06), transparent 60%);
+    overflow-x: hidden;
   }
   h1, h2, h3, h4, h5 {
     font-family: var(--font-display);
     letter-spacing: -0.01em;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+  p, a, span {
+    overflow-wrap: anywhere;
+  }
+  img {
+    display: block;
   }
   ::selection {
     background: oklch(0.82 0.14 85 / 0.35);

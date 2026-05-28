@@ -31,7 +31,7 @@ const orgSchema = [
     name: SITE_NAME,
     url: SITE_URL,
     logo: absoluteUrl("/branding/sanraj-logo.png"),
-    sameAs: ["https://www.instagram.com/", "https://www.facebook.com/", "https://x.com/"],
+    sameAs: ["https://www.instagram.com/hotelsanrajinn/"],
   },
   {
     "@context": "https://schema.org",
@@ -211,7 +211,7 @@ function RootComponent() {
         </div>
       </div>
       <Navbar />
-      <main className="min-h-screen">
+      <main className="min-h-screen pb-24 lg:pb-0">
         <Outlet />
       </main>
       <Footer />

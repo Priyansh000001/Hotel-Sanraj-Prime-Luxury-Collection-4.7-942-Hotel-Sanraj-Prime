@@ -61,7 +61,7 @@ function Home() {
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,oklch(0.82_0.14_85/0.18),transparent_60%)]" />
 
-        <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-6 pb-24 pt-40">
+        <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-4 pb-20 pt-32 sm:px-6 sm:pb-24 sm:pt-40">
           <motion.div
             initial={{ opacity: 0, y: -12, scale: 0.94 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -85,7 +85,7 @@ function Home() {
                 Est. 1998 · Two Luxury Properties
               </span>
             </div>
-            <h1 className="font-display text-5xl leading-[1.05] text-foreground sm:text-6xl md:text-7xl lg:text-[88px]">
+            <h1 className="font-display text-4xl leading-[1.05] text-foreground sm:text-6xl md:text-7xl lg:text-[88px]">
               Experience <span className="text-gradient-gold italic">Luxury</span>
               <br />& Quiet Comfort
             </h1>
@@ -94,23 +94,23 @@ function Home() {
               and family-friendly stays near key city routes including airport access.
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-10 flex flex-wrap gap-2.5 sm:gap-3">
               <a
                 href="#hotels"
-                className="group inline-flex items-center gap-2 rounded-full bg-gradient-gold px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.25em] text-ink shadow-gold-glow transition hover:scale-105"
+                className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-gradient-gold px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-ink shadow-gold-glow transition hover:scale-105 active:scale-95 sm:px-7 sm:py-3.5 sm:text-xs sm:tracking-[0.25em]"
               >
                 Explore Hotels
                 <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
               </a>
               <a
                 href="/hotels/pratap-nagar-branch#book"
-                className="rounded-full border border-gold/40 bg-ink/40 px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.25em] text-foreground backdrop-blur-md transition hover:border-gold hover:text-gold"
+                className="rounded-full border border-gold/40 bg-ink/40 px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-foreground backdrop-blur-md transition hover:border-gold hover:text-gold active:scale-95 sm:px-7 sm:py-3.5 sm:text-xs sm:tracking-[0.25em]"
               >
-                Book Now
+                Book Stay
               </a>
               <a
-                href="tel:+919876543210"
-                className="rounded-full border hairline px-5 py-3.5 text-xs uppercase tracking-[0.25em] text-foreground/80 backdrop-blur-md transition hover:text-gold"
+                href="tel:+917300070816"
+                className="rounded-full border hairline px-4 py-3 text-[11px] uppercase tracking-[0.2em] text-foreground/80 backdrop-blur-md transition hover:text-gold active:scale-95 sm:px-5 sm:py-3.5 sm:text-xs sm:tracking-[0.25em]"
               >
                 Call Now
               </a>
@@ -147,14 +147,14 @@ function Home() {
       </section>
 
       {/* HOTELS */}
-      <section id="hotels" className="mx-auto max-w-7xl px-6 py-28">
+      <section id="hotels" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28">
         <SectionHeading
           eyebrow="The Collection"
           title="Two distinct sanctuaries. One standard of luxury."
           subtitle="Each Sanraj Inn branch is shaped by modern comfort, thoughtful interiors, and reliable hospitality — all built for an effortless Jaipur stay."
           center
         />
-        <div className="mt-16 grid gap-10 lg:grid-cols-2">
+        <div className="mt-12 grid gap-8 sm:mt-16 sm:gap-10 lg:grid-cols-2">
           {HOTELS.map((h, i) => (
             <HotelCard key={h.slug} hotel={h} index={i} />
           ))}
@@ -203,7 +203,7 @@ function Home() {
 
       {/* CTA */}
       <section className="relative mx-auto max-w-7xl px-6 py-24">
-        <div className="relative overflow-hidden rounded-[2rem] border hairline bg-card p-12 shadow-luxury md:p-20">
+        <div className="relative overflow-hidden rounded-[2rem] border hairline bg-card p-7 shadow-luxury sm:p-12 md:p-20">
           <div
             className="absolute inset-0 opacity-60"
             style={{ background: "var(--gradient-radial-gold)" }}
@@ -215,20 +215,18 @@ function Home() {
             <p className="mt-4 text-muted-foreground">
               Our concierge team is available around the clock to design your perfect itinerary.
             </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <div className="mt-8 flex flex-wrap justify-center gap-2.5 sm:gap-3">
               <Link
                 to="/hotels/pratap-nagar-branch"
-                className="rounded-full bg-gradient-gold px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.25em] text-ink shadow-gold-glow"
+                className="rounded-full bg-gradient-gold px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-ink shadow-gold-glow sm:px-7 sm:py-3.5 sm:text-xs sm:tracking-[0.25em]"
               >
                 Explore Pratap Nagar
               </Link>
               <a
-                href="https://wa.me/919876543210"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border border-gold/40 px-7 py-3.5 text-xs uppercase tracking-[0.25em] text-foreground hover:text-gold"
+                href="tel:+917300070816"
+                className="rounded-full border border-gold/40 px-5 py-3 text-[11px] uppercase tracking-[0.2em] text-foreground hover:text-gold sm:px-7 sm:py-3.5 sm:text-xs sm:tracking-[0.25em]"
               >
-                WhatsApp Us
+                Call Now
               </a>
             </div>
           </div>

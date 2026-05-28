@@ -1,12 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Facebook, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { BrandLogo } from "@/components/site/BrandLogo";
 
-const SOCIAL_LINKS = [
-  { name: "Instagram", href: "https://www.instagram.com/" },
-  { name: "Facebook", href: "https://www.facebook.com/" },
-  { name: "X", href: "https://x.com/" },
-];
+const INSTAGRAM_LINK = "https://www.instagram.com/hotelsanrajinn/";
 
 export function Footer() {
   return (
@@ -24,19 +20,16 @@ export function Footer() {
             A premium Jaipur stay collection designed for guests who value comfort, calm interiors,
             and dependable hospitality.
           </p>
-          <div className="mt-6 flex gap-3">
-            {[Instagram, Facebook, Twitter].map((Icon, i) => (
-              <a
-                key={i}
-                href={SOCIAL_LINKS[i].href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={SOCIAL_LINKS[i].name}
-                className="grid h-10 w-10 place-items-center rounded-full border hairline transition hover:border-gold hover:text-gold"
-              >
-                <Icon size={16} />
-              </a>
-            ))}
+          <div className="mt-6 flex items-center">
+            <a
+              href={INSTAGRAM_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="grid h-10 w-10 place-items-center rounded-full border hairline transition hover:border-gold hover:text-gold"
+            >
+              <Instagram size={16} />
+            </a>
           </div>
         </div>
 
@@ -84,7 +77,7 @@ export function Footer() {
               <Phone size={14} className="text-gold" /> +91 98765 43210
             </li>
             <li className="flex items-center gap-2">
-              <Mail size={14} className="text-gold" /> reserve@sanrajinn.com
+              <Mail size={14} className="text-gold" /> hotelsanrajinn@gmail.com
             </li>
             <li className="flex items-center gap-2">
               <MapPin size={14} className="text-gold" /> Jaipur · Rajasthan · India

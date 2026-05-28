@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { Star, Phone, MessageCircle, MapPin, ArrowUpRight } from "lucide-react";
+import { Star, Phone, MapPin, ArrowUpRight } from "lucide-react";
 import type { Hotel } from "@/data/hotels";
 
 export function HotelCard({ hotel, index }: { hotel: Hotel; index: number }) {
@@ -48,7 +48,7 @@ export function HotelCard({ hotel, index }: { hotel: Hotel; index: number }) {
       </div>
 
       {/* Body */}
-      <div className="space-y-5 p-6 md:p-8">
+      <div className="space-y-5 p-5 sm:p-6 md:p-8">
         <p className="text-sm leading-relaxed text-muted-foreground">{hotel.tagline}</p>
 
         <div className="flex flex-wrap gap-2">
@@ -62,8 +62,8 @@ export function HotelCard({ hotel, index }: { hotel: Hotel; index: number }) {
           ))}
         </div>
 
-        <div className="flex items-end justify-between border-t hairline pt-5">
-          <div>
+        <div className="flex flex-wrap items-end justify-between gap-4 border-t hairline pt-5">
+          <div className="min-w-0">
             <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
               Starting from
             </div>
@@ -72,7 +72,7 @@ export function HotelCard({ hotel, index }: { hotel: Hotel; index: number }) {
                 ₹{hotel.startingOriginalPrice.toLocaleString("en-IN")}
               </div>
             ) : null}
-            <div className="mt-0.5 font-display text-3xl text-gradient-gold">
+            <div className="mt-0.5 font-display text-2xl text-gradient-gold sm:text-3xl">
               ₹{hotel.startingPrice.toLocaleString("en-IN")}
               <span className="ml-1 text-xs text-muted-foreground">/ night</span>
             </div>
@@ -84,7 +84,7 @@ export function HotelCard({ hotel, index }: { hotel: Hotel; index: number }) {
           <Link
             to="/hotels/$slug"
             params={{ slug: hotel.slug }}
-            className="group/btn inline-flex items-center gap-2 rounded-full bg-gradient-gold px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-ink shadow-gold-glow transition hover:scale-105"
+            className="group/btn inline-flex min-h-11 items-center gap-2 rounded-full bg-gradient-gold px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-ink shadow-gold-glow transition hover:scale-105 active:scale-95"
           >
             Explore
             <ArrowUpRight
@@ -94,32 +94,31 @@ export function HotelCard({ hotel, index }: { hotel: Hotel; index: number }) {
           </Link>
         </div>
 
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
           <a
             href={`tel:${hotel.phone}`}
             aria-label={`Call ${hotel.name}`}
-            className="flex items-center justify-center gap-1.5 rounded-xl border hairline py-2.5 text-xs text-foreground/80 transition hover:border-gold hover:text-gold"
+            className="flex min-h-11 items-center justify-center gap-1.5 rounded-xl border hairline px-2 py-2.5 text-xs text-foreground/80 transition hover:border-gold hover:text-gold active:scale-[0.99]"
           >
             <Phone size={12} /> Call
-          </a>
-          <a
-            href={`https://wa.me/${hotel.whatsapp}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`WhatsApp ${hotel.name}`}
-            className="flex items-center justify-center gap-1.5 rounded-xl border hairline py-2.5 text-xs text-foreground/80 transition hover:border-gold hover:text-gold"
-          >
-            <MessageCircle size={12} /> WhatsApp
           </a>
           <a
             href={hotel.mapsDirections}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Get directions to ${hotel.name}`}
-            className="flex items-center justify-center gap-1.5 rounded-xl border hairline py-2.5 text-xs text-foreground/80 transition hover:border-gold hover:text-gold"
+            className="flex min-h-11 items-center justify-center gap-1.5 rounded-xl border hairline px-2 py-2.5 text-xs text-foreground/80 transition hover:border-gold hover:text-gold active:scale-[0.99]"
           >
             <MapPin size={12} /> Directions
           </a>
+          <Link
+            to="/hotels/$slug"
+            params={{ slug: hotel.slug }}
+            className="flex min-h-11 items-center justify-center gap-1.5 rounded-xl border hairline px-2 py-2.5 text-xs text-foreground/80 transition hover:border-gold hover:text-gold active:scale-[0.99]"
+            aria-label={`Book stay at ${hotel.name}`}
+          >
+            <ArrowUpRight size={12} /> Book Stay
+          </Link>
         </div>
       </div>
 

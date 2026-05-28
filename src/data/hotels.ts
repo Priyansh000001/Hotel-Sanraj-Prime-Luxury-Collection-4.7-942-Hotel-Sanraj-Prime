@@ -26,7 +26,6 @@ export type Hotel = {
   priceBadge?: "Best Value" | "Limited Offer" | "Special Stay Price";
   cover: string;
   call: string;
-  whatsapp: string;
   googleMaps: string;
   gallery: GalleryImage[];
   amenities: string[];
@@ -66,10 +65,8 @@ export const HOTELS: Hotel[] = [
     startingPrice: 1399,
     priceBadge: "Best Value",
     cover: "/images/pratap-nagar/hotel-front.PNG",
-    call: "+919876543210",
-    whatsapp: "919876543210",
-    googleMaps:
-      "https://www.google.com/maps?q=Hotel+Sanraj+Inn,+160/13,+Bhairav+Ji+Cir,+near+Akshay+patra+temple,+Sector+16,+Pratap+Nagar,+Bharu,+Jaipur,+Rajasthan+302033&ftid=0x396dc98dd39c3f87:0x5f6d85fe574fc17d&entry=gps&shh=CAE&lucs=,94297699,100795621,94284475,94231188,94280568,47071704,94218641,94282134,94286869&g_ep=CAISEjI2LjE4LjAuOTA2NTA0NDMzMBgAIIgnKlIsOTQyOTc2OTksMTAwNzk1NjIxLDk0Mjg0NDc1LDk0MjMxMTg4LDk0MjgwNTY4LDQ3MDcxNzA0LDk0MjE4NjQxLDk0MjgyMTM0LDk0Mjg2ODY5QgJJTg%3D%3D&skid=6a760377-a6ba-4f69-aeb8-67d3d96bcbc6&g_st=iw",
+    call: "+917300070816",
+    googleMaps: "https://maps.app.goo.gl/vjEZ5m2QTsMP9gik8",
     mapsEmbed:
       "https://www.google.com/maps?q=Hotel+Sanraj+Inn,+160/13,+Bhairav+Ji+Cir,+near+Akshay+patra+temple,+Sector+16,+Pratap+Nagar,+Bharu,+Jaipur,+Rajasthan+302033&output=embed",
     gallery: [
@@ -167,7 +164,6 @@ export const HOTELS: Hotel[] = [
       },
     ],
     bookingLinks: [
-      { name: "Official Booking", url: "https://wa.me/919876543210" },
       {
         name: "MakeMyTrip",
         url: "https://www.makemytrip.com/hotels/hotel-details/?Campaign=&_uCurrency=INR&checkin=05202026&checkout=05212026&city=CTJAI&cmp=googlehoteldfinder_Old_DH_META_Free_RateRule%3Dmobile_usernolist_aud%3D__default_IN_mob_localuniversal_202510211214317393&country=IN&locusId=CTJAI&locusType=city&mtkeys=013cc05c-239b-45ec-8590-89aab37bc12e&rank=1&roomCount=1&roomStayQualifier=2e0e&rsc=1e2e0e&searchText=Jaipur%2C%20India&topHtlId=202510211214317393&totalGuestCount=2&hotelId=202510211214317393&isPropSearch=T",
@@ -197,7 +193,6 @@ export const HOTELS: Hotel[] = [
     priceBadge: "Limited Offer",
     cover: "/images/gurjar-ki-thadi/hotel-front.PNG",
     call: "+919812345678",
-    whatsapp: "919812345678",
     googleMaps:
       "https://www.google.com/maps/place/Hotel+Sanraj+Prime/@26.8856121,75.6901352,13z/data=!4m14!1m2!2m1!1shotel+sanraj+prime!3m10!1s0x396db5e5cda0540d:0x9d0a0f8e82f250a6!5m3!1s2026-05-21!4m1!1i2!8m2!3d26.8856121!4d75.7663529!15sChJob3RlbCBzYW5yYWogcHJpbWWSAQVob3RlbOABAA!16s%2Fg%2F11zbmzydj7!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D",
     mapsEmbed: "https://www.google.com/maps?q=Gurjar+Ki+Thadi+Jaipur&output=embed",
@@ -206,9 +201,18 @@ export const HOTELS: Hotel[] = [
         src: "/images/gurjar-ki-thadi/hotel-front.PNG",
         alt: "Hotel Sanraj Prime Gurjar Ki Thadi, Jaipur hotel entrance",
       },
-      { src: "/images/gurjar-ki-thadi/IMG_6428.JPG", alt: "Hotel Sanraj Prime Gurjar Ki Thadi, Jaipur room interior" },
-      { src: "/images/gurjar-ki-thadi/IMG_6438.JPG", alt: "Hotel Sanraj Prime Gurjar Ki Thadi, Jaipur room interior" },
-      { src: "/images/gurjar-ki-thadi/IMG_6439.JPG", alt: "Hotel Sanraj Prime Gurjar Ki Thadi, Jaipur room interior" },
+      {
+        src: "/images/gurjar-ki-thadi/IMG_6428.JPG",
+        alt: "Hotel Sanraj Prime Gurjar Ki Thadi, Jaipur room interior",
+      },
+      {
+        src: "/images/gurjar-ki-thadi/IMG_6438.JPG",
+        alt: "Hotel Sanraj Prime Gurjar Ki Thadi, Jaipur room interior",
+      },
+      {
+        src: "/images/gurjar-ki-thadi/IMG_6439.JPG",
+        alt: "Hotel Sanraj Prime Gurjar Ki Thadi, Jaipur room interior",
+      },
       {
         src: "/images/gurjar-ki-thadi/IMG_6440.JPG",
         alt: "Hotel Sanraj Prime Gurjar Ki Thadi, Jaipur bathroom interior",
@@ -217,8 +221,14 @@ export const HOTELS: Hotel[] = [
         src: "/images/gurjar-ki-thadi/IMG_6445.JPG",
         alt: "Hotel Sanraj Prime Gurjar Ki Thadi, Jaipur bathroom interior",
       },
-      { src: "/images/gurjar-ki-thadi/IMG_6457.JPG", alt: "Hotel Sanraj Prime Gurjar Ki Thadi, Jaipur balcony view" },
-      { src: "/images/gurjar-ki-thadi/IMG_6458.JPG", alt: "Hotel Sanraj Prime Gurjar Ki Thadi, Jaipur room interior" },
+      {
+        src: "/images/gurjar-ki-thadi/IMG_6457.JPG",
+        alt: "Hotel Sanraj Prime Gurjar Ki Thadi, Jaipur balcony view",
+      },
+      {
+        src: "/images/gurjar-ki-thadi/IMG_6458.JPG",
+        alt: "Hotel Sanraj Prime Gurjar Ki Thadi, Jaipur room interior",
+      },
       {
         src: "/images/gurjar-ki-thadi/IMG_6459.JPG",
         alt: "Hotel Sanraj Prime Gurjar Ki Thadi, Jaipur wardrobe interior",
@@ -227,9 +237,18 @@ export const HOTELS: Hotel[] = [
         src: "/images/gurjar-ki-thadi/IMG_6505.JPG",
         alt: "Hotel Sanraj Prime Gurjar Ki Thadi, Jaipur bathroom interior",
       },
-      { src: "/images/gurjar-ki-thadi/IMG_6511.JPG", alt: "Hotel Sanraj Prime Gurjar Ki Thadi, Jaipur room interior" },
-      { src: "/images/gurjar-ki-thadi/IMG_6512.JPG", alt: "Hotel Sanraj Prime Gurjar Ki Thadi, Jaipur balcony view" },
-      { src: "/images/gurjar-ki-thadi/IMG_6513.JPG", alt: "Hotel Sanraj Prime Gurjar Ki Thadi, Jaipur room interior" },
+      {
+        src: "/images/gurjar-ki-thadi/IMG_6511.JPG",
+        alt: "Hotel Sanraj Prime Gurjar Ki Thadi, Jaipur room interior",
+      },
+      {
+        src: "/images/gurjar-ki-thadi/IMG_6512.JPG",
+        alt: "Hotel Sanraj Prime Gurjar Ki Thadi, Jaipur balcony view",
+      },
+      {
+        src: "/images/gurjar-ki-thadi/IMG_6513.JPG",
+        alt: "Hotel Sanraj Prime Gurjar Ki Thadi, Jaipur room interior",
+      },
       {
         src: "/images/gurjar-ki-thadi/IMG_6514.JPG",
         alt: "Hotel Sanraj Prime Gurjar Ki Thadi, Jaipur bathroom interior",
@@ -284,10 +303,10 @@ export const HOTELS: Hotel[] = [
       },
     ],
     bookingLinks: [
-      { name: "Official Booking", url: "https://wa.me/919812345678" },
-      { name: "MakeMyTrip", url: "https://www.makemytrip.com" },
-      { name: "Booking.com", url: "https://www.booking.com" },
-      { name: "Agoda", url: "https://www.agoda.com" },
+      {
+        name: "Agoda",
+        url: "https://www.agoda.com/en-in/hotel-sanraj-prime/hotel/jaipur-in.html?cid=1844104&ds=XVpBN%2B6B59sCLdF6",
+      },
     ],
   }),
 ];

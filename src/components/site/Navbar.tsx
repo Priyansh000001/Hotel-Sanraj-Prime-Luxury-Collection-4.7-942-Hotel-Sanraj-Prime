@@ -27,17 +27,17 @@ export function Navbar() {
         scrolled ? "glass-strong border-b hairline py-2" : "py-4"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6">
         <Link
           to="/"
           className="group brand-nav-wrap flex items-center gap-3 rounded-full px-2 py-1.5"
         >
           <BrandLogo className="h-11 w-11 shrink-0 sm:h-12 sm:w-12" />
-          <div className="leading-tight">
-            <div className="font-display text-base tracking-wide text-foreground sm:text-lg">
+          <div className="min-w-0 leading-tight">
+            <div className="truncate font-display text-sm tracking-wide text-foreground sm:text-lg">
               Sanraj <span className="text-gradient-gold">Inn</span>
             </div>
-            <div className="text-[9px] uppercase tracking-[0.3em] text-muted-foreground sm:text-[10px]">
+            <div className="truncate text-[8px] uppercase tracking-[0.22em] text-muted-foreground sm:text-[10px] sm:tracking-[0.3em]">
               Luxury Collection
             </div>
           </div>
@@ -87,12 +87,19 @@ export function Navbar() {
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
-                className="py-3 font-display text-xl text-foreground/90 hover:text-gold"
+                className="break-words py-3 font-display text-xl leading-tight text-foreground/90 hover:text-gold"
                 activeProps={{ className: "text-gold" }}
               >
                 {l.label}
               </Link>
             ))}
+            <a
+              href="/hotels/pratap-nagar-branch#book"
+              onClick={() => setOpen(false)}
+              className="mt-4 inline-flex min-h-11 items-center justify-center rounded-full bg-gradient-gold px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-ink shadow-gold-glow"
+            >
+              Book Stay
+            </a>
           </div>
         </motion.div>
       )}
